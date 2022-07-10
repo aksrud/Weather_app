@@ -13,7 +13,7 @@ class DetailWeatherScreen extends StatefulWidget {
 class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
   
   String? weather;
-  int? temp;
+  var temp;
   double? dust1;
   double? dust2;
   dynamic airData;
@@ -28,11 +28,10 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
 
   void updateData(dynamic weatherDatas, dynamic AirData){
     l1 = weatherDatas['list'];
+    temp = l1[0]['main']['temp'];
     airData = AirData;
     dust1 = airData['list'][0]['components']['pm10'];
     dust2 = airData['list'][0]['components']['pm2_5'];
-    double temp2 = l1[0]['main']['temp'];
-    temp = temp2.round();
     weather= weatherString(l1[0]['weather'][0]['main']);
   }
 
@@ -52,7 +51,7 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
             children: [
               Image.asset(weather!),
               Padding(
-                padding: const EdgeInsets.fromLTRB(200.0, 0, 40.0, 0),
+                padding: const EdgeInsets.fromLTRB(200.0, 0.0, 40.0, 0.0),
                 child: Row(
                   children: [
                     Text('온도 : ',
@@ -104,7 +103,7 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(200.0, 100.0, 20.0, 0),
+                padding: const EdgeInsets.fromLTRB(200.0, 100.0, 20.0, 0.0),
                 child: Column(
                   children: [
                     Row(

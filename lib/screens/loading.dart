@@ -45,13 +45,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-          },
-          child: Text('get my'),
-        )
-      ),
+      body: Center(child: Image.asset('images/loading.gif'))
     );
   }
 }

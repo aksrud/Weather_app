@@ -15,7 +15,7 @@ class WeatherScreen extends StatefulWidget {
 class _WeatherScreenState extends State<WeatherScreen> {
 
   String? weather;
-  int? temp;
+  var temp;
   dynamic weatherDatas;
   dynamic airData;
   String? text;
@@ -28,8 +28,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 
   void updateData(dynamic WeatherData, dynamic WeatherDatas, dynamic AirData){
-    double temp2 = WeatherData['main']['temp'];
-    temp = temp2.round();
+    temp = WeatherData['main']['temp'];
     if(WeatherData['weather'][0]['main'] == 'Rain'){
       weather = 'images/흐림.png';
       text = '우산을 챙기세요';
@@ -51,7 +50,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
               Container(
                 child: Center(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 90),
+                    padding: const EdgeInsets.only(top: 90.0),
                     child: Column(
                       children: [
                         Image.asset(weather!),
@@ -101,7 +100,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                           height: 250,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(right: 30),
+                          padding: const EdgeInsets.only(right: 30.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
