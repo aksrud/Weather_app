@@ -155,7 +155,7 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
+                   Container(
                     height: 500,
                     width: 180,
                     color: Colors.grey,
