@@ -37,6 +37,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
       weather = 'images/흐림-해.png';
       text = '구름이 낌';
     }
+    if(WeatherData['weather'][0]['main'] == 'Clear'){
+      weather = 'images/맑음-해.png';
+      text = '맑다 ㅎㅎ';
+    }
+    else{
+      weather = '데이터가 없음';
+      text = '데이터가 읎음';
+    }
     weatherDatas=WeatherDatas;
     airData=AirData;
   }

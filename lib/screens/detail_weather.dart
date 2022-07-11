@@ -41,6 +41,14 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
     return icon!;
   }
 
+  String rain(){
+    try {
+      return '${l1[0]['rain']['3h']}';
+    } catch (e) {
+      return '0';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,9 +116,9 @@ class _DetailWeatherScreenState extends State<DetailWeatherScreen> {
                   children: [
                     Row(
                       children: [
-
                         Container(
-                          child: Text('강수량 : ${l1[0]['rain']['3h']}mm',
+                          child: Text(
+                            '강수량 : ${rain()}mm',
                             style: TextStyle(
                               fontSize: 20, 
                               fontWeight: FontWeight.bold
